@@ -1,0 +1,27 @@
+body {
+	font-family: "Arial", sans-serif;
+	font-size: 18px;
+}
+
+h1 {
+	text-align: center;
+}
+
+
+h2 {
+	font-size: large;
+	color: black;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: medium;
+	color: black;
+	font-weight: bold;
+}
+
+#ital {
+	text-align: center;
+	font-style: italic;
+}

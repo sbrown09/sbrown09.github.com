@@ -21,6 +21,11 @@ h3, p {
 	font-weight: bold;
 }
 
+#main{
+	font-size: x-large;
+	text-align: center;
+}
+
 #ital {
 	text-align: center;
 	font-style: italic;

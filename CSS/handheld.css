@@ -1,5 +1,5 @@
 body {
-	font-family: "Courier", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-size: small;
 }
 
@@ -20,16 +20,6 @@ h3, p {
 	color: black;
 	font-weight: bold;
 }
-
-p {
-	margin-left:5em;
-}
-
-h4, h5, h6 {
-	padding-left: 5%;
-	padding-right: 5%;
-}
-
 
 #ital {
 	text-align: center;

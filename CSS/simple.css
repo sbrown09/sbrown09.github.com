@@ -1,10 +1,14 @@
 body {
 	font-family: "Arial", sans-serif;
 	font-size: 18px;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 h1 {
 	text-align: center;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 
@@ -13,13 +17,31 @@ h2 {
 	color: black;
 	text-decoration: underline;
 	font-weight: bold;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 h3 {
 	font-size: medium;
 	color: black;
 	font-weight: bold;
+	padding-left: 5%;
+	padding-right: 5%;
 }
+
+p {
+	font-size: medium;
+	color: black;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+h4, h5, h6 {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+
 
 #ital {
 	text-align: center;

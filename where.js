@@ -28,6 +28,7 @@ function initialize() {
   else{alert("Geolocation is not supported by this browser.");}
 }
 
+
 function renderMap(){
 	MarkMe = new google.maps.Marker({
 					position: me,

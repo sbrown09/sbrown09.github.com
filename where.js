@@ -23,7 +23,7 @@ function initialize() {
 			myLong = position.coords.longitude;
 			me = new google.maps.LatLng(myLat, myLong);
 			map.panTo(me);
-//			renderMap();
+			renderMap();
 		});		
     }
   else{alert("Geolocation is not supported by this browser.");}

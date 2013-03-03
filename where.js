@@ -21,7 +21,7 @@ function initialize() {
 			navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
-			map.panTo(myLat, myLong);
+			me.panTo(myLat, myLong);
 //			renderMap();
 		});		
     }

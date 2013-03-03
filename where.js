@@ -7,7 +7,7 @@ function initialize() {
 	schedreq = new XMLHttpRequest();
   	myLat = 0;
   	myLong = 0;
-  	me = new google.maps.LatLng(myLat, myLong);
+  	var me = new google.maps.LatLng(myLat, myLong);
   	var mapOptions = {
 		center: me, 
 		zoom: 8, 
@@ -23,13 +23,13 @@ function initialize() {
 			myLong = position.coords.longitude;
 			me = new google.maps.LatLng(myLat, myLong);
 			map.panTo(me);
-			renderMap();
+			renderMap(me);
 		});		
     }
   else{alert("Geolocation is not supported by this browser.");}
 }
 
-function renderMap(){
+function renderMap(me){
 	MarkMe = new google.maps.Marker({
 					position: me,
 					title: "Here I Am!"

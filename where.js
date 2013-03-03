@@ -7,7 +7,6 @@ function initialize() {
 	schedreq = new XMLHttpRequest();
   	myLat = 0;
   	myLong = 0;
-  	var me = new google.maps.LatLng(myLat, myLong);
   	var mapOptions = {
 		center: me, 
 		zoom: 8, 
@@ -23,10 +22,6 @@ function initialize() {
 			myLong = position.coords.longitude;
 			me = new google.maps.LatLng(myLat, myLong);
 			map.panTo(me);
-			MarkMe = new google.maps.Marker({
-						position: me,
-						title: "Here I Am!"
-					});
 //			renderMap();
 		});		
     }

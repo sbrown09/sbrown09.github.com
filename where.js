@@ -38,7 +38,8 @@ function renderMap(){
 			map.panTo(me);
 			marker = new google.maps.Marker({
 					position: me,
-					title: "Here I Am!"
+					title: "Here I Am!",
+					icon: 'T.png'
 				});
 				marker.setMap(map);
 

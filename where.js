@@ -7,6 +7,7 @@ function initialize() {
 	schedreq = new XMLHttpRequest();
   	myLat = 0;
   	myLong = 0;
+  	me = new google.maps.LatLng(myLat, myLong);
   	var mapOptions = {
 		center: me, 
 		zoom: 8, 
@@ -20,7 +21,6 @@ function initialize() {
 			navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
-			me = new google.maps.LatLng(myLat, myLong);
 			map.panTo(me);
 //			renderMap();
 		});		

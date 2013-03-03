@@ -13,7 +13,7 @@ function initialize() {
 		zoom: 8, 
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
-	var marker;
+	marker;
 	var infowindow = new google.maps.InfoWindow();
 	var places;
 	var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
@@ -35,7 +35,7 @@ function renderMap(){
 					position: me,
 					title: "Here I Am!"
 				});
-				marker.setMap(map);
+				MarkMe.setMap(map);
 
 				// Open info window on click of marker
 //				google.maps.event.addListener(marker, 'click', function() {

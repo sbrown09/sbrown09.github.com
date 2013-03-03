@@ -32,7 +32,6 @@ function getme(){
 function renderMap(){
 			me = new google.maps.LatLng(myLat, myLong);
 			map.panTo(me);
-			alert("BOB")
 			marker = new google.maps.Marker({
 					position: me,
 					title: "Here I Am!",

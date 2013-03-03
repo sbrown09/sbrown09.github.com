@@ -13,7 +13,6 @@ function initialize() {
 		zoom: 8, 
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
-	marker;
 	var infowindow = new google.maps.InfoWindow();
 	var places;
 	var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);

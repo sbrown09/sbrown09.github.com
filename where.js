@@ -22,7 +22,7 @@ function initialize() {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
 			me = new google.maps.LatLng(myLat, myLong);
-			me.panTo(me);
+			map.panTo(me);
 //			renderMap();
 		});		
     }

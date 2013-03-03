@@ -4,7 +4,7 @@ function main(){
 }
 
 function initialize() {
-	var schedreq = new XMLHttpRequest();
+	schedreq = new XMLHttpRequest();
   	myLat = 0;
   	myLong = 0;
   	var me = new google.maps.LatLng(myLat, myLong);
@@ -29,7 +29,7 @@ function initialize() {
 }
 
 function renderMap(){
-	me = new google.maps.LatLng(myLat, myLng);
+	me = new google.maps.LatLng(myLat, myLong);
 	map.panTo(me);
 	MarkMe = new google.maps.Marker({
 					position: me,

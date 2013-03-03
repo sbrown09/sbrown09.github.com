@@ -1,4 +1,3 @@
-function main(){
   	var myLat = 0;
   	var myLong = 0;
   	var me = new google.maps.LatLng(myLat, myLong);
@@ -11,9 +10,6 @@ function main(){
 	var marker;
 	var infowindow = new google.maps.InfoWindow();
 	var places;
-	initialize();
-//	schedule();
-}
 
 function initialize() {
 	map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);

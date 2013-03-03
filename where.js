@@ -21,7 +21,9 @@ function initialize() {
 			navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
-			renderMap();
+			me = new google.maps.LatLng(myLat, myLong);
+			me.panTo(me);
+//			renderMap();
 		});		
     }
   else{alert("Geolocation is not supported by this browser.");}

@@ -22,8 +22,7 @@ function initialize() {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
 			renderMap();
-		});		
-    }
+	}	
   else{alert("Geolocation is not supported by this browser.");}
 }
 

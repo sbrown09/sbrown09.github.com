@@ -1,6 +1,6 @@
 function main(){
 	initialize();
-	schedule();
+//	schedule();
 }
 
 function initialize() {
@@ -22,7 +22,7 @@ function initialize() {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
 			map.panTo(me);
-			renderMap();
+//			renderMap();
 		});		
     }
   else{alert("Geolocation is not supported by this browser.");}

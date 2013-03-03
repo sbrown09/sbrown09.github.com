@@ -18,6 +18,7 @@ function initialize() {
 	var places;
 	var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 	if (navigator.geolocation){
+			alert("YAY");
 			navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;

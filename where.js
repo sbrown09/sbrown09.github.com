@@ -36,7 +36,7 @@ function renderMap(){
 					position: me,
 					title: "Here I Am!",
 					icon: new google.maps.MarkerImage(
-						'img/dot.png',
+						'R.png',
 						new google.maps.Size(10,10)
 						)
 				});

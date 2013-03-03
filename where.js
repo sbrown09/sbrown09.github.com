@@ -4,6 +4,7 @@ function main(){
 }
 
 function initialize() {
+	var schedreq = new XMLHttpRequest();
   	myLat = 0;
   	myLong = 0;
   	var me = new google.maps.LatLng(myLat, myLong);
@@ -18,18 +19,40 @@ function initialize() {
 	var places;
 	var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 	if (navigator.geolocation){
-			alert("YAY");
 			navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
-			alert(myLat + " " + myLong);
-//			renderMap();
+			renderMap();
 		});		
     }
   else{alert("Geolocation is not supported by this browser.");}
 }
 
-var schedreq = new XMLHttpRequest();
+function renderMap(){
+	me = new google.maps.LatLng(myLat, myLng);
+	map.panTo(me);
+	MarkMe = new google.maps.Marker({
+					position: me,
+					title: "Here I Am!"
+				});
+				marker.setMap(map);
+
+				// Open info window on click of marker
+//				google.maps.event.addListener(marker, 'click', function() {
+//					infowindow.setContent(marker.title);
+//					infowindow.open(map, marker);
+//				});
+
+				// Calling Google Places API
+//				var schedreq = {
+//					location: me,
+//					radius: '500',
+//					types: ['Red']
+//				};
+//				service = new google.maps.places.PlacesService(map);
+//				service.search(schedreq, callback);
+			}
+
 function schedule() {
 	//Set up request
 	schedreq.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json ",true);

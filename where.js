@@ -22,8 +22,14 @@ function initialize() {
 			myLong = position.coords.longitude;
 			me = new google.maps.LatLng(myLat, myLong);
 			map.panTo(me);
-			renderMap();
-		});		
+			MarkMe = new google.maps.Marker({
+					position: me,
+					title: "Here I Am!"
+				});
+				MarkMe.setMap(map);
+		//	renderMap();
+		});
+				
     }
   else{alert("Geolocation is not supported by this browser.");}
 }

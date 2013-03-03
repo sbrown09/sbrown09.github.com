@@ -6,15 +6,15 @@
 		<title>Geolocation Map Example</title>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
-		<link rel="stylesheet" href="where.css" />
+		<link rel="stylesheet" href="geolocation_map_style.css" />
 
 		<script>
-		 	myLat = position.coords.latitude;
-		 	myLong = position.coords.longitude;
+			var myLat = 0;
+			var myLng = 0;
 			var request = new XMLHttpRequest();
 			var me = new google.maps.LatLng(myLat, myLng);
 			var myOptions = {
-						zoom: , // The larger the zoom number, the bigger the zoom
+						zoom: 13, // The larger the zoom number, the bigger the zoom
 						center: me,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};

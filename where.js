@@ -17,11 +17,11 @@ function initialize() {
 	var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	var me = new google.maps.LatLng(myLat, myLng);
 	map.panTo(me);
-				marker = new google.maps.Marker({
-					position: me,
-					title: "Here I Am!"
-				});
-				marker.setMap(map);
+//				marker = new google.maps.Marker({
+//					position: me,
+//					title: "Here I Am!"
+//				});
+//				marker.setMap(map);
 
 				// Open info window on click of marker
 			//	google.maps.event.addListener(marker, 'click', function() {

@@ -32,13 +32,11 @@ function getme(){
 function renderMap(){
 			me = new google.maps.LatLng(myLat, myLong);
 			map.panTo(me);
+			alert("BOB")
 			marker = new google.maps.Marker({
 					position: me,
 					title: "Here I Am!",
-					icon: new google.maps.MarkerImage(
-						'R.png',
-						new google.maps.Size(10,10)
-						)
+					icon: 'R.png'
 				});
 				marker.setMap(map);
 

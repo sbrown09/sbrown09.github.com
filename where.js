@@ -7,7 +7,7 @@ function initialize() {
 	schedreq = new XMLHttpRequest();
   	myLat = 0;
   	myLong = 0;
-  	me = new google.maps.LatLng(myLat, myLong);
+  	var me = new google.maps.LatLng(myLat, myLong);
   	var mapOptions = {
 		center: me, 
 		zoom: 8, 

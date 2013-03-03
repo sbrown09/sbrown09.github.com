@@ -4,10 +4,10 @@ function main(){
 }
 
 function initialize() {
-	schedreq = new XMLHttpRequest();
+//	schedreq = new XMLHttpRequest();
   	myLat = 0;
   	myLong = 0;
-  	var me = new google.maps.LatLng(myLat, myLong);
+  	me = new google.maps.LatLng(myLat, myLong);
   	var mapOptions = {
 		center: me, 
 		zoom: 8, 
@@ -17,14 +17,14 @@ function initialize() {
 	var infowindow = new google.maps.InfoWindow();
 	var places;
 	var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
-//	if (navigator.geolocation){
+	if (navigator.geolocation){
 			navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
 			map.panTo(me);
 //			renderMap();
 		});		
-//    }
+    }
   else{alert("Geolocation is not supported by this browser.");}
 }
 

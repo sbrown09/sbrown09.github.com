@@ -18,6 +18,12 @@ function showPosition(position){
 }
 
 function initialize() {
+  if (navigator.geolocation){
+  	myLat = position.coords.latitude;
+  	myLong = position.coords.longitude;
+  }
+  else{alert("Geolocation is not supported by this browser.");}
+  	
 	var mapOptions = {
 		center: new google.maps.LatLng(myLat, myLong), 
 		zoom: 8, 

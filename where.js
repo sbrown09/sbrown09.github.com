@@ -18,11 +18,12 @@ function initialize() {
 	var places;
 	var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 	if (navigator.geolocation){
-			loc = navigator.geolocation.getCurrentPosition();
+			navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
 			renderMap();
-	}	
+		});		
+    }
   else{alert("Geolocation is not supported by this browser.");}
 }
 

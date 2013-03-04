@@ -10,7 +10,7 @@
 	var marker;
 	var infowindow = new google.maps.InfoWindow();
 	var places;
-
+	var schedreq = new XMLHttpRequest();
 function initialize() {
 	map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 	getme();

@@ -143,7 +143,7 @@ function renderMap(){
 			markers = new google.maps.Marker({
 					position: me,
 					title: "Here I Am!",
-					icon: 'RT.png'
+					icon: 'you.jpeg'
 				});
 				markers.setMap(map);
 }

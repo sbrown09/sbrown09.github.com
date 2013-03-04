@@ -105,14 +105,14 @@ function initialize() {
 	Stations[16] = pt;
 	markers.setMap(map);
 	
-	redLine = new google.map.Polyline({
+	redLine = new google.maps.Polyline({
 		path:Stations,
 		strokeColor: "#FF0000",
 		strokeOpacity: 1.0,
 		strokeWeight: 10
 	})
 	redLine.setMap(map);
-	branch = new google.map.Polyline({
+	branch = new google.maps.Polyline({
 		path:Branch,
 		strokeColor: "#FF0000",
 		strokeOpacity: 1.0,

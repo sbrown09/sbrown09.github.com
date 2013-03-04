@@ -121,15 +121,6 @@ function schedule() {
 			schedcode = schedreq.responseText;
 			trips = JSON.parse(schedcode);
 			alert(trips);
-			for(i=0;i<trips.length;i++){
-				spot = new google.maps.LatLng(myLat, myLong);
-				map.panTo(me);
-				markers = new google.maps.Marker({
-					position: me,
-					title: "Here I Am!",
-					icon: 'RT.png'
-				});
-				markers.setMap(map);
-			}
+
 		}
 	}

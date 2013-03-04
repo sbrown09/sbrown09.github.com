@@ -127,7 +127,7 @@ function schedule() {
 				markers = new google.maps.Marker({
 					position: me,
 					title: "Here I Am!",
-					icon: ''RT.png''
+					icon: 'RT.png'
 				});
 				markers.setMap(map);
 			}

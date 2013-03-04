@@ -7,7 +7,7 @@
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	var map;
-	var marker;
+	var markers;
 	var infowindow = new google.maps.InfoWindow();
 	var places;
 	var schedreq = new XMLHttpRequest();
@@ -101,12 +101,12 @@ function getme(){
 function renderMap(){
 			me = new google.maps.LatLng(myLat, myLong);
 			map.panTo(me);
-			marker = new google.maps.Marker({
+			markers = new google.maps.Marker({
 					position: me,
 					title: "Here I Am!",
 					icon: 'RT.png'
 				});
-				marker.setMap(map);
+				markers.setMap(map);
 }
 
 function schedule() {
@@ -124,12 +124,12 @@ function schedule() {
 			for(i=0;i<trips.length;i++){
 				spot = new google.maps.LatLng(myLat, myLong);
 				map.panTo(me);
-				marker = new google.maps.Marker({
+				markers = new google.maps.Marker({
 					position: me,
 					title: "Here I Am!",
 					icon: 'RT.png'
 				});
-				marker.setMap(map);
+				markers.setMap(map);
 			}
 		}
 	}

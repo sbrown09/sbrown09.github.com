@@ -65,12 +65,12 @@ function initialize() {
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.320685, -71.052391);
 	markers = new google.maps.Marker({position: pt, title: "JFK/UMass Station", icon: 'RT.png'});
-	Stations[11] = pt;
+	Stations[12] = pt;
 	Branch[1] = pt;
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.275275, -71.029583);
 	markers = new google.maps.Marker({position: pt, title: "North Quincy Station", icon: 'RT.png'});
-	Stations[12] = pt;
+	Stations[13] = pt;
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.31129, -71.053331);
 	markers = new google.maps.Marker({position: pt, title: "Savin Hill Station", icon: 'RT.png'});
@@ -82,11 +82,11 @@ function initialize() {
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.2665139, -71.0203369);
 	markers = new google.maps.Marker({position: pt, title: "Wollaston Station", icon: 'RT.png'});
-	Stations[13] = pt;
+	Stations[14] = pt;
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.251809, -71.005409);
 	markers = new google.maps.Marker({position: pt, title: "Quincy Center Station", icon: 'RT.png'});
-	Stations[14] = pt;
+	Stations[15] = pt;
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.29312583, -71.06573796);
 	markers = new google.maps.Marker({position: pt, title: "Shawmut Station", icon: 'RT.png'});
@@ -94,7 +94,7 @@ function initialize() {
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.233391, -71.007153);
 	markers = new google.maps.Marker({position: pt, title: "Quincy Adams Station", icon: 'RT.png'});
-	Stations[15] = pt;
+	Stations[16] = pt;
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.284652, -71.064489);
 	markers = new google.maps.Marker({position: pt, title: "Ashmont Station", icon: 'RT.png'});
@@ -102,7 +102,7 @@ function initialize() {
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.2078543, -71.0011385);
 	markers = new google.maps.Marker({position: pt, title: "Braintree Station", icon: 'RT.png'});
-	Stations[16] = pt;
+	Stations[17] = pt;
 	markers.setMap(map);
 	
 	redLine = new google.maps.Polyline({

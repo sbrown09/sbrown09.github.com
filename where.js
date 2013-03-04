@@ -22,6 +22,7 @@ function getme(){
 			myLat = position.coords.latitude;
 			myLong = position.coords.longitude;
 			renderMap();
+			schedule();
 		});
 				
     }

@@ -118,6 +118,7 @@ function initialize() {
 		strokeOpacity: 1.0,
 		strokeWeight: 10
 	})
+	branch.setMap(map);
 	
 	getme();
 }

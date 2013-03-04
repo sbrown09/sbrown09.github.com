@@ -39,27 +39,33 @@ function renderMap(){
 					icon: 'RT.png'
 				});
 				marker.setMap(map);
-				
+			alw = new google.maps.LatLng(42.395428, -71.142483)
+			alewife = new google.maps.Marker({
+					position: alw,
+					title: "Alewife Station",
+					icon: 'RT.png'
+				});
+				alewife.setMap(map);
+			dav = new google.maps.LatLng(42.39674, -71.121815)
+			davis = new google.maps.Marker({
+					position: dav,
+					title: "Davis Station",
+					icon: 'RT.png'
+				});
+				davis.setMap(map);	
+			por = new google.maps.LatLng(42.3884, -71.119149)
+			porter = new google.maps.Marker({
+					position: por,
+					title: "Porter Square Station",
+					icon: 'RT.png'
+				});
+				porter.setMap(map);		
 
-
-				// Open info window on click of marker
-//				google.maps.event.addListener(marker, 'click', function() {
-//					infowindow.setContent(marker.title);
-//					infowindow.open(map, marker);
-//				});
-
-				// Calling Google Places API
-//				var schedreq = {
-//					location: me,
-//					radius: '500',
-//					types: ['Red']
-//				};
-//				service = new google.maps.places.PlacesService(map);
-//				service.search(schedreq, callback);
 			}
 
 function schedule() {
-	schedreq.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json ",true);
+//	schedreq.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json ",true);
+	schedreq.open("GET", "http://developer.mbta.com/RT_Archive/RealTimeHeavyRailKeys.csv",true);
 	schedreq.send(null);
 	schedreq.onreadystatechange = callback;
 	alert("sent")

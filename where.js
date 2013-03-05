@@ -243,7 +243,7 @@ if(d<q){
 			});
 			infoWindow.open(map);
 			
-			closestPt = new google.maps.LatLng(closest['ib'], closest['jb');
+			closestPt = new google.maps.LatLng(closest['ib'], closest['jb']);
 			redLine = new google.maps.Polyline({
 				path:me,closestPt,
 				strokeColor: "#FFFFFF",

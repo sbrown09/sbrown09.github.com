@@ -159,9 +159,10 @@ function renderMap(){
 			infoWindow = new google.maps.InfoWindow({
 				content: "BLAH"
 			});
-			google.maps.event.addListener(marker, 'click', function() {
-				infowindow.open(map,markers);
-  			});
+			infoWindow.open(map);
+//			google.maps.event.addListener(markers, 'click', function() {
+//				infowindow.open(map,markers);
+  //			});
 }
 
 function schedule() {

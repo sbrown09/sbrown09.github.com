@@ -156,9 +156,12 @@ function renderMap(){
 //				});
 //				closestLine.setMap(map);
 //			}
-			infoWindow = new google.maps.infoWindow();
-			infoWindow.setContent("BLAH");
-			infoWindow.open(map);
+			infoWindow = new google.maps.infoWindow({
+				content: "BLAH"
+			});
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map,markers);
+  			});
 }
 
 function schedule() {

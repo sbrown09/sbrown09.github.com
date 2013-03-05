@@ -205,11 +205,10 @@ var closest;
 var closest1;
 var closest2;
 if(d < dist){
-	closest1 = Stations[i]['name'];
+	closest1 = Stations[i];
 	dist = d;
 }
 }
-alert(closest1 + dist);
 var distance = 100;
 for(j = 0; j< Branch.length; j++){
 var lat1 = Branch[j]['ib']; 
@@ -227,23 +226,30 @@ var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 var q = R * c; 
 if(q < distance){
-	closest2 = Branch[j]['name'];
+	closest2 = Branch[j];
 	distance = q;
 }
 }
-alert(closest2);
-if(closest1>closest2){
+if(d>q){
 	closest = closest2;
 }
-if(closest1<closest2){
+if(d<q){
 	closest = closest1;
 }
 
 			infoWindow = new google.maps.InfoWindow({
-				content: "Closest T Station is " + closest + " and it is " + dist + " miles away.",
+				content: "Closest T Station is " + closest['name'] + " and it is " + dist + " miles away.",
 				position: me
 			});
 			infoWindow.open(map);
+			
+			closestPt = new google.maps.LatLng(closest['ib'], closest['jb');
+			redLine = new google.maps.Polyline({
+				path:me,closestPt,
+				strokeColor: "#FFFFFF",
+				strokeOpacity: 1.0,
+				strokeWeight: 10
+			})
 //			google.maps.event.addListener(markers, 'click', function() {
 //				infowindow.open(map,markers);
   //			});

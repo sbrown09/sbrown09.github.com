@@ -261,7 +261,7 @@ function schedule() {
 
 function callback() {
     abbreviate();
-    if (request.readyState == 4 && request.status == 200){
+    if (schedreq.readyState == 4 && schedreq.status == 200){
         tsched = JSON.parse(schedreq.responseText);
 
         for(m = 0; m < abbreviations.length; m++){

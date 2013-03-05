@@ -146,9 +146,7 @@ function renderMap(){
 					title: "Here I Am!",
 				});
 				markers.setMap(map);
-			meMarker = new google.maps.Marker({position: me, title: contents});
-			meMarker.setMap(map);
-			map.setCenter(me, 12);
+
 			if (closestPt != null) {
 				closestLine = new google.maps.Polyline({
 					path: [me, closestPt],

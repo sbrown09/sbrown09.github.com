@@ -365,6 +365,50 @@ function waldo(){
 	if (reqwal.readyState == 4 && reqwal.status == 200){
         ppl = JSON.parse(reqwal.responseText);
         alert(ppl);
-    }
-
+        if(ppl.length != 0){
+	        for(i=0;i<ppl.length;i++){
+		        if(ppl[i]['name']=="Waldo"){
+			        persondisp(i,'waldo.png', ppl); 
+		        }
+		        else{
+			        persondisp(i,'carmen.png', ppl);
+			    }
+	        }
+	    }
 }
+}
+
+function persondisp(index, icon, ppl){
+Number.prototype.toRad = function() {
+   return this * Math.PI / 180;
+}
+var lat2 = myLat; 
+var lon2 = myLong;
+var farness = 100;
+var lat1 = ppl[index]['latitude']; 
+var lon1 = ppl[index]['longitude'];  
+var R = 6371; 
+var x1 = lat2-lat1;
+var dLat = x1.toRad();  
+var x2 = lon2-lon1;
+var dLon = x2.toRad();  
+var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+                Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
+                Math.sin(dLon/2) * Math.sin(dLon/2);  
+var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+var t = R * c; 
+
+str = ppl[index]['name'] + " is " + t + " miles away from you."
+
+    dude = new google.maps.LatLng(lat1, lon1);
+    marker = new google.maps.Marker({
+        map: map,
+        position: dude,
+        icon: icon
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(str);
+        infowindow.open(map, this);
+    });
+}
+

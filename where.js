@@ -396,8 +396,8 @@ function render_image_of(my_picture, pic_lat, pic_lng, t_stop, map_info_note){
 
     /* on click of marker, open info window */
     google.maps.event.addListener(pic_marker, 'click', function() {
-        info_window.setContent(t_stop + "<p>" + map_info_note);//the_sched);
-        info_window.open(map, this);
+        infowindow.setContent(t_stop + "<p>" + map_info_note);//the_sched);
+        infowindow.open(map, this);
     });
 }
 

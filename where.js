@@ -280,7 +280,7 @@ function callback() {
                         dir = "South";
                     }
                     var t_stop_full = abbreviations[m]["full_name"];
-                    str += line_col +" "+ trip_num +" "+ nor_or_sou +" " + time_rem + "<p>"
+                    str += line_col +" "+ trip_num +" "+ dir +" " + time_rem + "<p>"
                     var index = m;
                 }
             }

@@ -185,7 +185,7 @@ Number.prototype.toRad = function() {
 
 var lat2 = myLat; 
 var lon2 = myLong;
-dist = 0;
+var dist = 999999;
 for(i = 0; i<Stations.length; i++){
 var lat1 = Stations[i]['ib']; 
 var lon1 = Stations[i]['jb']; 
@@ -204,13 +204,13 @@ var d = R * c;
 var closest;
 var closest1;
 var closest2;
-var dist = 999999;
 if(d < dist){
 	closest1 = Stations[i]['name'];
 	dist = d;
 	alert(closest1 + " is " +dist);
 }
 }
+var distance = 100;
 for(j = 0; j< Branch.length; j++){
 var lat1 = Branch[j]['ib']; 
 var lon1 = Branch[j]['jb']; 
@@ -226,7 +226,6 @@ var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
                 Math.sin(dLon/2) * Math.sin(dLon/2);  
 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 var q = R * c; 
-var distance = 100;
 if(q < distance){
 	closest2 = Branch[j]['name'];
 	distance = q;

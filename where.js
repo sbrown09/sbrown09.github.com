@@ -299,7 +299,7 @@ function prepare(icon, latitude, longitude, name, str){
     loc = new google.maps.LatLng(latitude, longitude);
     marker = new google.maps.Marker({
         map: map,
-        position: pic_loc,
+        position: loc,
         icon: icon
     });
     google.maps.event.addListener(marker, 'click', function() {

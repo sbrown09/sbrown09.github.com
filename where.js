@@ -14,6 +14,7 @@
 	var Stations = [];
 	var Branch = [];
 	var infoWindow;
+	var abbreviations = [];
 function initialize() {
 	map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 	pt = new google.maps.LatLng(42.395428, -71.142483);

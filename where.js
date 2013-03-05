@@ -249,6 +249,7 @@ if(dist<distance){
 				strokeWeight: 10
 			})
 			pathT.setMap(map);
+			
 //			google.maps.event.addListener(markers, 'click', function() {
 //				infowindow.open(map,markers);
   //			});

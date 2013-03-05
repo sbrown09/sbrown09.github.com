@@ -367,18 +367,20 @@ function waldo(){
         if(ppl.length != 0){
 	        for(i=0;i<ppl.length;i++){
 		        if(ppl[i]['name']=="Waldo"){
-			        persondisp(i,'waldo.png', ppl, "Waldo ",ppl[i]['loc']['latitude'],ppl[i]['loc']['longitude']); 
+		        	dWal = distfromme(ppl[i]['loc']['latitude'],ppl[i]['loc']['longitude']);
+			        persondisp('waldo.png', "Waldo ", dWal); 
 		        }
 		        if(ppl[i]['name']=="Carmen Sandiego"){
-			        persondisp(i,'carmen.png', ppl, "Carmen Sandiego ",ppl[i]['loc']['latitude'],ppl[i]['loc']['longitude']);
+		        	dCar = distfromme(ppl[i]['loc']['latitude'],ppl[i]['loc']['longitude']);
+			        persondisp('carmen.png', "Carmen Sandiego ", dCar);
 			    }
 	        }
 	    }
 }
 }
 
-function persondisp(index, icon, ppl, name, lat, lon){
-Number.prototype.toRad = function() {
+function distfromme(lat, lon){
+	Number.prototype.toRad = function() {
    return this * Math.PI / 180;
 }
 var lat2 = myLat; 
@@ -395,8 +397,11 @@ var t;
  a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * Math.sin(dLon/2) * Math.sin(dLon/2);  
  c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
  t = R * c; 
+ return t;
+}
 
-str = " is " + t + " miles away from you."
+
+function persondisp(icon, name, howfar){
 
     dude = new google.maps.LatLng(lat1, lon1);
     marker = new google.maps.Marker({
@@ -405,7 +410,7 @@ str = " is " + t + " miles away from you."
         icon: icon
     });
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(name + str);
+        infowindow.setContent(name + "is " + howfar + " miles away from you.");
         infowindow.open(map, this);
     });
 }

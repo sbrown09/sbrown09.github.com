@@ -204,9 +204,10 @@ var d = R * c;
 var closest;
 var dist = 999999;
 if(d < dist){
-	closest = Stations[i]['name'];
+	closest1 = Stations[i]['name'];
 	dist = d;
 }
+alert(dist + closest);
 }
 for(j = 0; j< Branch.length; j++){
 var lat1 = Branch[j]['ib']; 
@@ -222,12 +223,21 @@ var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
                 Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
                 Math.sin(dLon/2) * Math.sin(dLon/2);  
 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-var d = R * c; 
-if(d < dist){
-	closest = Branch[j]['name'];
-	dist = d;
+var q = R * c; 
+var distance = 100;
+if(q < distance){
+	closest2 = Branch[j]['name'];
+	distance = q;
 }
+alert(q + closest2);
 }
+if(closest1>closest2){
+	closest = closest1;
+}
+if(closest1<closest2){
+	closest = closest2;
+}
+
 			infoWindow = new google.maps.InfoWindow({
 				content: "Closest T Station is " + closest + " and it is " + dist + " miles away.",
 				position: me

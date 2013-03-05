@@ -22,7 +22,6 @@ function initialize() {
 	markers = new google.maps.Marker({position: pt, title: "Alewife Station", icon: 'RT.png'});
 	Stations[0] = pt;
 	Stations[0]['name']="Alewife Station";
-	render_image_of('RT.png', abbreviations[index]["lat"], abbreviations[index]["lng"], t_stop_full, str)
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.39674, -71.121815);
 	markers = new google.maps.Marker({position: pt, title: "Davis Station", icon: 'RT.png'});

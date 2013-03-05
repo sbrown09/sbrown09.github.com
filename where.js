@@ -147,15 +147,15 @@ function renderMap(){
 				});
 				markers.setMap(map);
 
-			if (closestPt != null) {
-				closestLine = new google.maps.Polyline({
-					path: [me, closestPt],
-					strokeColor: "#000000",
-					strokeOpacity: 0.5,
-					strokeWeight: 15
-				});
-				closestLine.setMap(map);
-			}
+//			if (closestPt != null) {
+//				closestLine = new google.maps.Polyline({
+//					path: [me, closestPt],
+//					strokeColor: "#000000",
+//					strokeOpacity: 0.5,
+//					strokeWeight: 15
+//				});
+//				closestLine.setMap(map);
+//			}
 			infoWindow = new google.maps.infoWindow();
 			infoWindow.setContent("BLAH");
 			infoWindow.open(map);

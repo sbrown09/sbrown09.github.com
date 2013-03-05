@@ -13,6 +13,7 @@
 	var schedreq = new XMLHttpRequest();
 	var Stations = [];
 	var Branch = [];
+	var infoWindow;
 function initialize() {
 	map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 	pt = new google.maps.LatLng(42.395428, -71.142483);
@@ -145,6 +146,21 @@ function renderMap(){
 					title: "Here I Am!",
 				});
 				markers.setMap(map);
+			meMarker = new google.maps.Marker({position: me, title: contents});
+			meMarker.setMap(map);
+			map.setCenter(me, 12);
+			if (closestPt != null) {
+				closestLine = new google.maps.Polyline({
+					path: [me, closestPt],
+					strokeColor: "#000000",
+					strokeOpacity: 0.5,
+					strokeWeight: 15
+				});
+				closestLine.setMap(map);
+			}
+			infoWindow = new google.maps.infoWindow();
+			infoWindow.setContent(meMarker.title);
+			infoWindow.open(map, meMarker);
 }
 
 function schedule() {

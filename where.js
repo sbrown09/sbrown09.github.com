@@ -204,6 +204,7 @@ var d = R * c;
 var closest;
 var dist = 999999;
 if(d < dist){
+	alert(Stations[i]['name'] + " " + d);
 	closest1 = Stations[i]['name'];
 	dist = d;
 }

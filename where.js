@@ -368,10 +368,10 @@ function waldo(){
         if(ppl.length != 0){
 	        for(i=0;i<ppl.length;i++){
 		        if(ppl[i]['name']=="Waldo"){
-			        persondisp(i,'waldo.png', ppl); 
+			        persondisp(i,'waldo.png', ppl, "Waldo "); 
 		        }
 		        if(ppl[i]['name']=="Carmen Sandiego"){
-			        persondisp(i,'carmen.png', ppl);
+			        persondisp(i,'carmen.png', ppl, "Carmen Sandiego ");
 			    }
 	        }
 	    }
@@ -398,7 +398,7 @@ var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 var t = R * c; 
 
-str = ppl[index]['name'] + " is " + t + " miles away from you."
+str = " is " + t + " miles away from you."
 
     dude = new google.maps.LatLng(lat1, lon1);
     marker = new google.maps.Marker({
@@ -407,7 +407,7 @@ str = ppl[index]['name'] + " is " + t + " miles away from you."
         icon: icon
     });
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(str);
+        infowindow.setContent(name + str);
         infowindow.open(map, this);
     });
 }

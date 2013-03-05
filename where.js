@@ -271,10 +271,10 @@ function callback() {
             for(i = 0; i < tsched.length; i++){
             
                 if (tsched[i]["PlatformKey"] == abbreviations[m]["abb"]){
-                    line    = tsched[i]["Line"];
-                    name      = tsched[i]["PlatformKey"];
-                    trip    = tsched[i]["Trip"];
-                    time    = tsched[i]["TimeRemaining"];
+                    line = tsched[i]["Line"];
+                    name = tsched[i]["PlatformKey"];
+                    trip = tsched[i]["Trip"];
+                    time = tsched[i]["TimeRemaining"];
                     if (tsched[i]["PlatformKey"][4] == 'N'){
                         dir = "North";
                     }
@@ -303,7 +303,7 @@ function prepare(icon, latitude, longitude, name, str){
         icon: icon
     });
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(name + "<p>" + str);
+        infowindow.setContent(name + "<p>" + "Line " + "Trip # " + "Bound " + "Time Remaining" + "<p>"+ str);
         infowindow.open(map, this);
     });
 }
@@ -351,5 +351,11 @@ function abbreviate(){
     abbreviations[38] = {"abb": "RQUAN", "full_name": "Quincy Adams Square", "lat":42.233391, "lng":-71.008153};
     abbreviations[39] = {"abb": "RQUAS", "full_name": "Quincy Adams Square", "lat":42.233391, "lng":-71.008153};
     abbreviations[40] = {"abb": "RBRAS", "full_name": "Braintree Square", "lat":42.2078543, "lng":-71.0011385};
+}
+
+function findpeople() {
+	reqwal.open("GET", "http://messagehub.herokuapp.com/a3.json",true);
+	reqwal.send(null);
+	reqwal.onreadystatechange = callback;
 }
 

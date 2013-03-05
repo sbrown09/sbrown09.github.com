@@ -395,9 +395,10 @@ var farness = 100;
                 Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
                 Math.sin(dLon/2) * Math.sin(dLon/2);  
  c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
- t = R * c; 
+ if(name == "Waldo"){
+	 t = R * c; 
 
-str = " is " + t + " miles away from you."
+str1 = " is " + t + " miles away from you."
 
     dude = new google.maps.LatLng(lat1, lon1);
     marker = new google.maps.Marker({
@@ -406,7 +407,23 @@ str = " is " + t + " miles away from you."
         icon: icon
     });
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(name + str);
+        infowindow.setContent(name + str1);
         infowindow.open(map, this);
     });
+   }
+   if(name == "Carmen Sandiego"){
+	   g = R * c;
+	   str2 = " is " + t + " miles away from you."
+
+    dude = new google.maps.LatLng(lat1, lon1);
+    marker = new google.maps.Marker({
+        map: map,
+        position: dude,
+        icon: icon
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(name + str2);
+        infowindow.open(map, this);
+    });
+   }
 }

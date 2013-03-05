@@ -202,13 +202,14 @@ var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 var d = R * c; 
 var closest;
+var closest1;
+var closest2;
 var dist = 999999;
 if(d < dist){
-	alert(Stations[i]['name'] + " " + d);
 	closest1 = Stations[i]['name'];
 	dist = d;
+	alert(closest1 + " is " +dist);
 }
-alert(dist + closest);
 }
 for(j = 0; j< Branch.length; j++){
 var lat1 = Branch[j]['ib']; 

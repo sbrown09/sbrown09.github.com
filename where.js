@@ -303,7 +303,7 @@ function prepare(icon, latitude, longitude, name, str){
         icon: icon
     });
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(name + "<p>" + "Line " + "Trip" + "Bound " + "Time" + "<p>"+ str);
+        infowindow.setContent(name + "<p>" + "Line " + "Trip" +" "+ "Bound " + "Time" + "<p>"+ str);
         infowindow.open(map, this);
     });
 }

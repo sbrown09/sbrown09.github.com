@@ -366,11 +366,11 @@ function waldo(){
         ppl = JSON.parse(reqwal.responseText);
         alert(ppl);
         if(ppl.length != 0){
-	        for(i=0;i<=ppl.length;i++){
+	        for(i=0;i<ppl.length;i++){
 		        if(ppl[i]['name']=="Waldo"){
 			        persondisp(i,'waldo.png', ppl); 
 		        }
-		        else{
+		        if(ppl[i]['name']=="Carmen Sandiego"){
 			        persondisp(i,'carmen.png', ppl);
 			    }
 	        }

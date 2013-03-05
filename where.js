@@ -260,14 +260,11 @@ function schedule() {
 	schedreq.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json ",true);
 	schedreq.send(null);
 	schedreq.onreadystatechange = callback;
-	alert("sent")
 	}
 
 	function callback() {
 		if (schedreq.readyState == 4 && schedreq.status == 200) {
 			schedcode = schedreq.responseText;
 			trips = JSON.parse(schedcode);
-			alert(trips);
-
 		}
 	}

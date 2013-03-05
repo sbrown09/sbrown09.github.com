@@ -282,7 +282,7 @@ function callback() {
                         dir = "South";
                     }
                     var name_full = abbreviations[m]["full_name"];
-                    str += line +"   "+ trip +"   "+ dir +"   " + time + "<p>"
+                    str += line +" "+" "+" "+ trip +" "+" "+" "+ dir +" "+" "+" " + time + "<p>"
                     var index = m;
                 }
            }
@@ -303,7 +303,7 @@ function prepare(icon, latitude, longitude, name, str){
         icon: icon
     });
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(name + "<p>" + "Line   " + "Trip #   " + "Bound   " + "Time Remaining" + "<p>"+ str);
+        infowindow.setContent(name + "<p>" + "Line " + "Trip # " + "Bound " + "Time Remaining" + "<p>"+ str);
         infowindow.open(map, this);
     });
 }

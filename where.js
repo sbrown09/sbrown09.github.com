@@ -15,6 +15,7 @@
 	var Branch = [];
 	var infoWindow;
 	var abbreviations = [];
+	var infowindow = new google.maps.InfoWindow();
 function initialize() {
 	map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 	pt = new google.maps.LatLng(42.395428, -71.142483);
@@ -283,14 +284,32 @@ function callback() {
                     str += line_col +" "+ trip_num +" "+ dir +" " + time_rem + "<p>"
                     var index = m;
                 }
-            }
            }
-          }
-         }
+        }
+        render_image_of('RT.png', abbreviations[index]["lat"], abbreviations[index]["lng"], t_stop_full, str);
+    }
+}
         
-      
+    
+
+function render_image_of(my_picture, pic_lat, pic_lng, t_stop, map_info_note){
+    pic_loc = new google.maps.LatLng(pic_lat, pic_lng);
+    /* create a marker */
+    pic_marker = new google.maps.Marker({
+        map: map,
+        position: pic_loc,
+        icon: my_picture
+    });
+
+    /* on click of marker, open info window */
+    google.maps.event.addListener(pic_marker, 'click', function() {
+        info_window.setContent(t_stop + "<p>" + map_info_note);//the_sched);
+        info_window.open(map, this);
+    });
+}
+
 	
-	function abbreviate(){
+function abbreviate(){
     abbreviations[0] = {"abb": "RALEN", "full_name": "Alewife Station", "lat": 42.395428, "lng": -71.142483};
     abbreviations[1] = {"abb": "RDAVN", "full_name": "Davis Station", "lat":42.39674, "lng": -71.119149};
     abbreviations[2] = {"abb": "RDAVS", "full_name": "Davis Station", "lat":42.39674, "lng": -71.119149};

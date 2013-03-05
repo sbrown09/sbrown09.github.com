@@ -352,3 +352,4 @@ function abbreviate(){
     abbreviations[39] = {"abb": "RQUAS", "full_name": "Quincy Adams Square", "lat":42.233391, "lng":-71.008153};
     abbreviations[40] = {"abb": "RBRAS", "full_name": "Braintree Square", "lat":42.2078543, "lng":-71.0011385};
 }
+

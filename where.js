@@ -11,6 +11,7 @@
 	var infowindow = new google.maps.InfoWindow();
 	var places;
 	var schedreq = new XMLHttpRequest();
+	var reqwal = new XMLHttpRequest();
 	var Stations = [];
 	var Branch = [];
 	var infoWindow;

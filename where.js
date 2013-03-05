@@ -230,10 +230,10 @@ if(q < distance){
 	distance = q;
 }
 }
-if(d>q){
+if(dist>distance){
 	closest = closest2;
 }
-if(d<q){
+if(dist<distance){
 	closest = closest1;
 }
 
@@ -250,6 +250,7 @@ if(d<q){
 				strokeOpacity: 1.0,
 				strokeWeight: 10
 			})
+			closestPt.setMap(map);
 //			google.maps.event.addListener(markers, 'click', function() {
 //				infowindow.open(map,markers);
   //			});

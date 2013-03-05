@@ -245,7 +245,7 @@ if(d<q){
 			
 			closestPt = new google.maps.LatLng(closest['ib'], closest['jb']);
 			redLine = new google.maps.Polyline({
-				path:me,closestPt,
+				path: [me, closestPt],
 				strokeColor: "#FFFFFF",
 				strokeOpacity: 1.0,
 				strokeWeight: 10

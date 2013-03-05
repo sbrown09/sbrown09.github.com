@@ -244,13 +244,13 @@ if(dist<distance){
 			infoWindow.open(map);
 			
 			closestPt = new google.maps.LatLng(closest['ib'], closest['jb']);
-			redLine = new google.maps.Polyline({
+			pathT = new google.maps.Polyline({
 				path: [me, closestPt],
 				strokeColor: "#FFFFFF",
 				strokeOpacity: 1.0,
 				strokeWeight: 10
 			})
-			closestPt.setMap(map);
+			pathT.setMap(map);
 //			google.maps.event.addListener(markers, 'click', function() {
 //				infowindow.open(map,markers);
   //			});

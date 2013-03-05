@@ -157,8 +157,8 @@ function renderMap(){
 				closestLine.setMap(map);
 			}
 			infoWindow = new google.maps.infoWindow();
-			infoWindow.setContent(meMarker.title);
-			infoWindow.open(map, meMarker);
+			infoWindow.setContent("BLAH");
+			infoWindow.open(map);
 }
 
 function schedule() {

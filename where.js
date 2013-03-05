@@ -384,6 +384,7 @@ Number.prototype.toRad = function() {
 var lat2 = myLat; 
 var lon2 = myLong;
 var farness = 100;
+var t;
  lat1 = lat; 
  lon1 = lon;  
  R = 6371; 

@@ -208,9 +208,9 @@ if(d < dist){
 	dist = d;
 }
 }
-for(j = 0; j<Branch.length; j++){
-var lat1 = Branch[i]['ib']; 
-var lon1 = Branch[i]['jb']; 
+for(j = 0; j< Branch.length; j++){
+var lat1 = Branch[j]['ib']; 
+var lon1 = Branch[j]['jb']; 
 
 var R = 6371; // km 
 //has a problem with the .toRad() method below.
@@ -224,7 +224,7 @@ var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 var d = R * c; 
 if(d < dist){
-	closest = Branch[i]['name'];
+	closest = Branch[j]['name'];
 	dist = d;
 }
 }

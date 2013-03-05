@@ -156,7 +156,7 @@ function renderMap(){
 //				});
 //				closestLine.setMap(map);
 //			}
-			infoWindow = new google.maps.infoWindow({
+			infoWindow = new google.maps.InfoWindow({
 				content: "BLAH"
 			});
 			google.maps.event.addListener(marker, 'click', function() {

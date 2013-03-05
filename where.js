@@ -207,9 +207,9 @@ var closest2;
 if(d < dist){
 	closest1 = Stations[i]['name'];
 	dist = d;
-	alert(closest1 + " is " +dist);
 }
 }
+alert(closest1 + dist);
 var distance = 100;
 for(j = 0; j< Branch.length; j++){
 var lat1 = Branch[j]['ib']; 
@@ -230,13 +230,13 @@ if(q < distance){
 	closest2 = Branch[j]['name'];
 	distance = q;
 }
-alert(q + closest2);
 }
+alert(closest2);
 if(closest1>closest2){
-	closest = closest1;
+	closest = closest2;
 }
 if(closest1<closest2){
-	closest = closest2;
+	closest = closest1;
 }
 
 			infoWindow = new google.maps.InfoWindow({

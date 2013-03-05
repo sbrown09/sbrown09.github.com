@@ -364,29 +364,28 @@ function findpeople() {
 function waldo(){
 	if (reqwal.readyState == 4 && reqwal.status == 200){
         ppl = JSON.parse(reqwal.responseText);
-        alert(ppl);
         if(ppl.length != 0){
 	        for(i=0;i<ppl.length;i++){
 		        if(ppl[i]['name']=="Waldo"){
-			        persondisp(i,'waldo.png', ppl, "Waldo "); 
+			        persondisp(i,'waldo.png', ppl, "Waldo ",ppl[i]['loc']['latitude'],ppl[i]['loc']['longitude']); 
 		        }
 		        if(ppl[i]['name']=="Carmen Sandiego"){
-			        persondisp(i,'carmen.png', ppl, "Carmen Sandiego ");
+			        persondisp(i,'carmen.png', ppl, "Carmen Sandiego ",ppl[i]['loc']['latitude'],ppl[i]['loc']['longitude']);
 			    }
 	        }
 	    }
 }
 }
 
-function persondisp(index, icon, ppl, name){
+function persondisp(index, icon, ppl, name, lat, lon){
 Number.prototype.toRad = function() {
    return this * Math.PI / 180;
 }
 var lat2 = myLat; 
 var lon2 = myLong;
 var farness = 100;
-var lat1 = ppl[index]['loc']['latitude']; 
-var lon1 = ppl[index]['loc']['longitude'];  
+var lat1 = lat; 
+var lon1 = lon;  
 var R = 6371; 
 var x1 = lat2-lat1;
 var dLat = x1.toRad();  

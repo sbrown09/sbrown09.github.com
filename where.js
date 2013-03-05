@@ -22,9 +22,9 @@ function initialize() {
 	markers = new google.maps.Marker({position: pt, title: "Alewife Station", icon: 'RT.png'});
 	Stations[0] = pt;
 	Stations[0]['name']="Alewife Station";
-	google.maps.event.addListener('RT.png', 'click', function() {
+	google.maps.event.addListener(markers, 'click', function() {
         info_window.setContent("BLAH");
-        info_window.open(map, markers);
+        info_window.open(map, this);
     });
 	markers.setMap(map);
 	pt = new google.maps.LatLng(42.39674, -71.121815);

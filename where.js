@@ -261,6 +261,7 @@ function schedule() {
 
 function callback() {
     abbreviate();
+    str = "";
     if (schedreq.readyState == 4 && schedreq.status == 200){
         tsched = JSON.parse(schedreq.responseText);
 
@@ -279,7 +280,7 @@ function callback() {
                         dir = "South";
                     }
                     var t_stop_full = abbreviations[m]["full_name"];
-                    t_content_string += line_col +" "+ trip_num +" "+ nor_or_sou +" " + time_rem + "<p>"
+                    str += line_col +" "+ trip_num +" "+ nor_or_sou +" " + time_rem + "<p>"
                     var index = m;
                 }
             }

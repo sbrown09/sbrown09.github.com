@@ -378,7 +378,7 @@ function waldo(){
 }
 }
 
-function persondisp(index, icon, ppl){
+function persondisp(index, icon, ppl, name){
 Number.prototype.toRad = function() {
    return this * Math.PI / 180;
 }

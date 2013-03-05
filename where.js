@@ -196,9 +196,7 @@ var x1 = lat2-lat1;
 var dLat = x1.toRad();  
 var x2 = lon2-lon1;
 var dLon = x2.toRad();  
-var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
-                Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
-                Math.sin(dLon/2) * Math.sin(dLon/2);  
+var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * Math.sin(dLon/2) * Math.sin(dLon/2);  
 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 var d = R * c; 
 var closest;
@@ -213,9 +211,7 @@ var distance = 100;
 for(j = 0; j< Branch.length; j++){
 var lat1 = Branch[j]['ib']; 
 var lon1 = Branch[j]['jb']; 
-
 var R = 6371; // km 
-//has a problem with the .toRad() method below.
 var x1 = lat2-lat1;
 var dLat = x1.toRad();  
 var x2 = lon2-lon1;
@@ -262,9 +258,76 @@ function schedule() {
 	schedreq.onreadystatechange = callback;
 	}
 
-	function callback() {
-		if (schedreq.readyState == 4 && schedreq.status == 200) {
-			schedcode = schedreq.responseText;
-			trips = JSON.parse(schedcode);
-		}
-	}
+function callback() {
+    abbreviate();
+    if (request.readyState == 4 && request.status == 200){
+        tsched = JSON.parse(schedreq.responseText);
+
+        for(m = 0; m < abbreviations.length; m++){
+            for(i = 0; i < tsched.length; i++){
+            
+                if (tsched[i]["PlatformKey"] == abbreviations[m]["abb"]){
+                    line_col    = tsched[i]["Line"];
+                    t_stop      = tsched[i]["PlatformKey"];
+                    trip_num    = tsched[i]["Trip"];
+                    time_rem    = tsched[i]["TimeRemaining"];
+                    if (tsched[i]["PlatformKey"][4] == 'N'){
+                        dir = "North";
+                    }
+                    else {
+                        dir = "South";
+                    }
+                    var t_stop_full = abbreviations[m]["full_name"];
+                    t_content_string += line_col +" "+ trip_num +" "+ nor_or_sou +" " + time_rem + "<p>"
+                    var index = m;
+                }
+            }
+           }
+          }
+         }
+        
+      
+	
+	function abbreviate(){
+    abbreviations[0] = {"abb": "RALEN", "full_name": "Alewife Station", "lat": 42.395428, "lng": -71.142483};
+    abbreviations[1] = {"abb": "RDAVN", "full_name": "Davis Station", "lat":42.39674, "lng": -71.119149};
+    abbreviations[2] = {"abb": "RDAVS", "full_name": "Davis Station", "lat":42.39674, "lng": -71.119149};
+    abbreviations[3] = {"abb": "RPORN", "full_name": "Porter Square", "lat":42.3884, "lng": -71.119149};
+    abbreviations[4] = {"abb": "RPORS", "full_name": "Porter Square", "lat":42.3884, "lng": -71.119149};
+    abbreviations[5] = {"abb": "RHARN", "full_name": "Harvard Square", "lat":42.373362, "lng": -71.118956};
+    abbreviations[6] = {"abb": "RHARS", "full_name": "Harvard Square", "lat":42.373362, "lng": -71.118956};
+    abbreviations[7] = {"abb": "RCENN", "full_name": "Central Square Square", "lat":42.365486, "lng":-71.103802};
+    abbreviations[8] = {"abb": "RCENS", "full_name": "Central Square Square", "lat":42.365486, "lng":-71.103802};
+    abbreviations[9] = {"abb": "RKENN", "full_name": "Kendall/MIT Square", "lat":42.36249079, "lng":-71.08617653};
+    abbreviations[10] = {"abb": "RKENS", "full_name": "Kendall/MIT Square", "lat":42.36249079, "lng":-71.08617653};
+    abbreviations[11] = {"abb": "RMGHN", "full_name": "Charles/MGH Square", "lat":42.361166, "lng":-71.070628};
+    abbreviations[12] = {"abb": "RMGHS", "full_name": "Charles/MGH Square", "lat":42.361166, "lng":-71.070628};
+    abbreviations[13] = {"abb": "RPRKN", "full_name": "Park St. Square", "lat":42.35639457, "lng":-71.0624242};
+    abbreviations[14] = {"abb": "RPRKS", "full_name": "Park St. Square", "lat":42.35639457, "lng":-71.0624242};
+    abbreviations[15] = {"abb": "RDTCN", "full_name": "Downtown Crossing Square", "lat":42.355518, "lng":-71.060225};
+    abbreviations[16] = {"abb": "RDTCS", "full_name": "Downtown Crossing Square", "lat":42.355518, "lng":-71.060225};
+    abbreviations[17] = {"abb": "RSOUN", "full_name": "South Square", "lat":42.352271, "lng":-71.055242};
+    abbreviations[18] = {"abb": "RSOUS", "full_name": "South Square", "lat":42.352271, "lng":-71.055242 };
+    abbreviations[19] = {"abb": "RBRON", "full_name": "Broadway Square", "lat":42.342622, "lng":-71.056967};
+    abbreviations[20] = {"abb": "RBROS", "full_name": "Broadway Square", "lat":42.342622, "lng":-71.056967};
+    abbreviations[21] = {"abb": "RANDN", "full_name": "Andrew Square", "lat":42.350154, "lng":-71.057655};
+    abbreviations[22] = {"abb": "RANDS", "full_name": "Andrew Square", "lat":42.350154, "lng":-71.057655};
+    abbreviations[23] = {"abb": "RJFKN", "full_name": "JFK/UMass Square", "lat":42.320685, "lng":-71.052391};
+    abbreviations[24] = {"abb": "RJFKS", "full_name": "JFK/UMass Square", "lat":42.320685, "lng":-71.052391};
+    abbreviations[25] = {"abb": "RSAVN", "full_name": "Savin Hall Square", "lat":42.31129, "lng":-71.053331};
+    abbreviations[26] = {"abb": "RSAVS", "full_name": "Savin Hall Square", "lat":42.31129, "lng":-71.053331};
+    abbreviations[27] = {"abb": "RFIEN", "full_name": "Fields Corner Square", "lat":42.300093, "lng":-71.061667};
+    abbreviations[28] = {"abb": "RFIES", "full_name": "Fields Corner Square", "lat":42.300093, "lng":-71.061667};
+    abbreviations[29] = {"abb": "RFIEN", "full_name": "Shawmut Square", "lat":42.29312583, "lng":-71.06573796};
+    abbreviations[30] = {"abb": "RFIES", "full_name": "Shawmut Square", "lat":42.29312583, "lng":-71.06573796};
+    abbreviations[31] = {"abb": "RASHS", "full_name": "Ashmont Square", "lat":42.284652, "lng":-71.064489};
+    abbreviations[32] = {"abb": "RNQUN", "full_name": "North Quincy Square", "lat":42.275275, "lng":-71.029583};
+    abbreviations[33] = {"abb": "RNQUS", "full_name": "North Quincy Square", "lat":42.275275, "lng":-71.029583};
+    abbreviations[34] = {"abb": "RWOLN", "full_name": "Wollaston Square", "lat":42.2665139, "lng":-71.0203369};
+    abbreviations[35] = {"abb": "RWOLS", "full_name": "Wollaston Square", "lat":42.2665139, "lng":-71.0203369};
+    abbreviations[36] = {"abb": "RQUCN", "full_name": "Quincy Center Square", "lat":42.251809, "lng":-71.005409};
+    abbreviations[37] = {"abb": "RQUCS", "full_name": "Quincy Center Square", "lat":42.251809, "lng":-71.005409};
+    abbreviations[38] = {"abb": "RQUAN", "full_name": "Quincy Adams Square", "lat":42.233391, "lng":-71.008153};
+    abbreviations[39] = {"abb": "RQUAS", "full_name": "Quincy Adams Square", "lat":42.233391, "lng":-71.008153};
+    abbreviations[40] = {"abb": "RBRAS", "full_name": "Braintree Square", "lat":42.2078543, "lng":-71.0011385};
+}

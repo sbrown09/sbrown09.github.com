@@ -356,6 +356,13 @@ function abbreviate(){
 function findpeople() {
 	reqwal.open("GET", "http://messagehub.herokuapp.com/a3.json",true);
 	reqwal.send(null);
-	reqwal.onreadystatechange = callback;
+	reqwal.onreadystatechange = waldo;
 }
 
+function waldo(){
+	if (reqwal.readyState == 4 && reqwal.status == 200){
+        ppl = JSON.parse(reqwal.responseText);
+        alert(ppl);
+    }
+
+}

@@ -271,22 +271,22 @@ function callback() {
             for(i = 0; i < tsched.length; i++){
             
                 if (tsched[i]["PlatformKey"] == abbreviations[m]["abb"]){
-                    line_col    = tsched[i]["Line"];
-                    t_stop      = tsched[i]["PlatformKey"];
-                    trip_num    = tsched[i]["Trip"];
-                    time_rem    = tsched[i]["TimeRemaining"];
+                    line    = tsched[i]["Line"];
+                    name      = tsched[i]["PlatformKey"];
+                    trip    = tsched[i]["Trip"];
+                    time    = tsched[i]["TimeRemaining"];
                     if (tsched[i]["PlatformKey"][4] == 'N'){
                         dir = "North";
                     }
                     else {
                         dir = "South";
                     }
-                    var t_stop_full = abbreviations[m]["full_name"];
-                    str += line_col +" "+ trip_num +" "+ dir +" " + time_rem + "<p>"
+                    var name_full = abbreviations[m]["full_name"];
+                    str += line +" "+ trip +" "+ dir +" " + time + "<p>"
                     var index = m;
                 }
            }
-           render_image_of('RT.png', abbreviations[index]["lat"], abbreviations[index]["lng"], t_stop_full, str);    
+           prepare('RT.png', abbreviations[index]["lat"], abbreviations[index]["lng"], name_full, str);    
               
         }
         
@@ -295,18 +295,15 @@ function callback() {
         
     
 
-function render_image_of(my_picture, pic_lat, pic_lng, t_stop, map_info_note){
-    pic_loc = new google.maps.LatLng(pic_lat, pic_lng);
-    /* create a marker */
-    pic_marker = new google.maps.Marker({
+function prepare(icon, latitude, longitude, name, str){
+    loc = new google.maps.LatLng(latitude, longitude);
+    marker = new google.maps.Marker({
         map: map,
         position: pic_loc,
-        icon: my_picture
+        icon: icon
     });
-
-    /* on click of marker, open info window */
-    google.maps.event.addListener(pic_marker, 'click', function() {
-        infowindow.setContent(t_stop + "<p>" + map_info_note);//the_sched);
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(name + "<p>" + str);
         infowindow.open(map, this);
     });
 }
